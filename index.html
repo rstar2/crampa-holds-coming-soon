@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="title" content="Crampa Holds">
+    <meta name="ROBOTS" content="Crampa Holds, Climbing Holds, Training Holds, Wooden Holds">
+    <meta name="description" content="Crampa Holds">
+    <meta name="abstract" content="Crampa Holds">
+
+    <meta name="author" content="Rumen Neshev">
+    <meta name="publisher" content="neshev.rumen@gmail.com">
+    <meta name="copyright" content="neshev.rumen@gmail.com">
+    <meta name="revisit-after" content="20 days">
+    <link rel="shortcut icon" href="assets/img/favicon.png">
+
+    <title>Crampa Holds</title>
+
+    <!-- Bootstrap -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/font-awesome.css" rel="stylesheet">
+    <link href="assets/css/bootstrap-theme.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/animations.css">
+
+    <!-- simple style -->
+    <link href="assets/css/style.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+    <div class="cloud floating">
+        <img src="assets/img/cloud.png">
+    </div>
+
+    <div class="cloud pos1 fliped floating">
+        <img src="assets/img/cloud.png">
+    </div>
+
+    <div class="cloud pos2 floating">
+        <img src="assets/img/cloud.png">
+    </div>
+
+    <div class="cloud pos3 fliped floating">
+        <img src="assets/img/cloud.png">
+    </div>
+
+
+    <div id="wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12">
+                    <!-- TODO: add real logo -->
+                    <!-- <img src="assets/img/logo.png"> -->
+                    <br/>
+                    <br/>
+                    <h2 class="subtitle">We're working hard to launch the online shop and we'll be ready very soon</h2>
+                    <br/>
+
+                    <form class="form-inline validate signup" action="/subscribe" method="get" role="form">
+                        <div class="form-group">
+                            <input type="email" class="form-control" name="EMAIL" id="exampleInputEmail1" placeholder="Enter your email address">
+                        </div>
+                        <input type="submit" name="subscribe" value="Get notified!" class="btn btn-theme">
+                    </form>
+                    <br/>
+                </div>
+                <div class="col-sm-12 align-center">
+                    <ul class="social-network social-circle">
+                        <li>
+                            <a href="#" class="icoFacebook" title="Facebook">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                        </li>
+                        <!-- <li><a href="#" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a>
+                        </li> -->
+                        <!-- <li><a href="#" class="icoGit" title="Github"><i class="fa fa-github"></i></a>
+                        </li> -->
+                        <!-- <li><a href="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a>
+                        </li> -->
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-lg-offset-3">
+                    <p class="copyright">Developed by Rumen Neshev @ neshev.rumen@gmail.com</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+
+        $(document).ready(function () {
+            $('#wrapper').height($(document).height());
+
+            $('form input[type="submit"]').submit(function (event) {
+                event.preventDefault();
+
+                // TODO: validate before registering
+                if ($form.validate()) { register($form); }
+            });
+        });
+
+        function appendResult(userText, className, iconClass) {
+            var resultHTML = "<div class='stretchLeft result " + className + "'>" + userText + " <span class='fa fa-" + iconClass + "'></span>" + "</div>";
+            $('body').append(resultHTML);
+            $('.result').delay(10000).fadeOut('1000');
+        }
+
+
+        function register($form) {
+            // TODO: create a list in the server
+            $.ajax({
+                type: $form.attr('method'),
+                url: $form.attr('action'),
+                data: $form.serialize(),
+                cache: false,
+                dataType: 'json',
+                contentType: "application/json; charset=utf-8",
+                error: function (err) { alert("Could not connect to the registration server. Please try again later."); },
+                success: function (data) {
+                    if (data.result != "success") {
+                        appendResult('Wrong Email Or You Are Already Registered, Try Again', 'error', 'exclamation');
+                    } else {
+                        // It worked, carry on...
+                        appendResult('Successful, Check Your Email For Confirmation ', 'success', 'check');
+                    }
+                }
+            });
+        }
+    </script>
+
+</body>
+
+</html>
