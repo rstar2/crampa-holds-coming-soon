@@ -141,11 +141,14 @@ a:focus {
 
 .cloud {
   position: fixed;
+}
+
+.cloud.pos1 {
   bottom: 40px;
   left: 20px;
 }
 
-.cloud.fliped img {
+.cloud.flipped img {
   -moz-transform: scaleX(-1);
   -o-transform: scaleX(-1);
   -webkit-transform: scaleX(-1);
@@ -154,32 +157,30 @@ a:focus {
   -ms-filter: "FlipH";
 }
 
-.cloud.pos1 {
+.cloud.pos2 {
   right: 20px;
-  left: auto;
   bottom: 70px;
 }
 
-.cloud.pos1 img {
+.cloud.pos2 img {
   width: 100px;
 }
 
-.cloud.pos2 {
+.cloud.pos3 {
   bottom: 150px;
   right: 50px;
-  left: auto;
 }
 
-.cloud.pos2 img {
+.cloud.pos3 img {
   width: 150px;
 }
 
-.cloud.pos3 {
+.cloud.pos4 {
   bottom: 200px;
   left: 120px;
 }
 
-.cloud.pos3 img {
+.cloud.pos4 img {
   width: 180px;
 }
 

@@ -13,7 +13,7 @@
     <meta name="publisher" content="neshev.rumen@gmail.com">
     <meta name="copyright" content="neshev.rumen@gmail.com">
     <meta name="revisit-after" content="20 days">
-    <link rel="shortcut icon" href="assets/img/favicon.png">
+    <link rel="shortcut icon" href="/img/favicon.png">
 
     <title>Crampa Holds</title>
 
@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 
     <!-- Custom style -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body class="h-100 w-100">
@@ -34,7 +34,7 @@
             <div class="row justify-content-center my-3">
                 <div class="col text-center">
                     <!-- TODO: add real logo -->
-                    <!-- <img src="assets/img/logo.png"> -->
+                    <!-- <img src="/img/logo.png"> -->
                 </div>
             </div>
             <div class="row justify-content-center my-5">
@@ -44,7 +44,8 @@
             </div>
             <div class="row justify-content-center my-4">
                 <div class="col-auto text-center">
-                    <form id="subscribe" class="form-inline" action="/subscribe" method="POST" role="form">
+                        // TODO: use default validation
+                    <form id="subscribe" class="form-inline validate" action="/subscribe" method="POST" role="form">
                         <div class="form-group">
                             <input class="form-control" type="email" name="email" placeholder="Enter your email address" required>
                             <input class="form-control btn" type="submit" value="Get notified!">
@@ -72,20 +73,20 @@
             </div>
         </div>
 
-        <div class="cloud floating">
-            <img src="assets/img/cloud.png">
+        <div class="cloud pos1 floating">
+            <img src="/img/cloud.png">
         </div>
 
-        <div class="cloud pos1 fliped floating">
-            <img src="assets/img/cloud.png">
+        <div class="cloud pos2 flipped floating">
+            <img src="/img/cloud.png">
         </div>
 
-        <div class="cloud pos2 floating">
-            <img src="assets/img/cloud.png">
+        <div class="cloud pos3 floating">
+            <img src="/img/cloud.png">
         </div>
 
-        <div class="cloud pos3 fliped floating">
-            <img src="assets/img/cloud.png">
+        <div class="cloud pos4 flipped floating">
+            <img src="/img/cloud.png">
         </div>
     </div>
 
@@ -99,15 +100,19 @@
                 form.querySelector('input[type="submit"]').addEventListener('click', function (event) {
                     event.preventDefault();
 
-                    // TODO: create a list in the server
-                    axios.post('/subscribe', {
-                        data: form
+                    const formData = new FormData(form);
+                    // TODO: add email validation lib
+                    const data = {email : "ASDASD"};
+                    axios({
+                        url: '/subscribe',
+                        method: 'POST',
+                        data: data,
                     })
-                        .then(function (data) {
-                            if (data.result !== 'success') {
-                                appendResult('Wrong Email Or You Are Already Registered, Try Again', 'error', 'exclamation');
-                            } else {
+                        .then(function (response) {
+                            if (response.data && response.data.success) {
                                 appendResult('Successful, Check Your Email For Confirmation ', 'success', 'check');
+                            } else {
+                                appendResult('Wrong Email Or You Are Already Registered, Try Again', 'error', 'exclamation');
                             }
                         })
                         .catch(function (error) {

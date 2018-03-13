@@ -1,0 +1,24 @@
+{
+  "name": "crampa-holds-coming-soon",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rstar2/crampa-holds-coming-soon.git"
+  },
+  "author": "Rumen Neshev",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rstar2/crampa-holds-coming-soon/issues"
+  },
+  "homepage": "https://github.com/rstar2/crampa-holds-coming-soon#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "lodash": "^4.17.5"
+  }
+}
