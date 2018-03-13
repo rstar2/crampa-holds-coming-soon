@@ -44,13 +44,11 @@
             </div>
             <div class="row justify-content-center my-4">
                 <div class="col-auto text-center">
-                        // TODO: use default validation
                     <form id="subscribe" class="form-inline validate" action="/subscribe" method="POST" role="form">
                         <div class="form-group">
                             <input class="form-control" type="email" name="email" placeholder="Enter your email address" required>
                             <input class="form-control btn" type="submit" value="Get notified!">
                         </div>
-
                     </form>
                 </div>
             </div>
@@ -77,15 +75,15 @@
             <img src="/img/cloud.png">
         </div>
 
-        <div class="cloud pos2 flipped floating">
+        <div class="cloud pos2 flipped floating floating-4s">
             <img src="/img/cloud.png">
         </div>
 
-        <div class="cloud pos3 floating">
+        <div class="cloud pos3 floating floating-5s">
             <img src="/img/cloud.png">
         </div>
 
-        <div class="cloud pos4 flipped floating">
+        <div class="cloud pos4 flipped floating floating-6s">
             <img src="/img/cloud.png">
         </div>
     </div>
@@ -97,16 +95,26 @@
             window.onload = function () {
                 var form = document.getElementById("subscribe");
 
-                form.querySelector('input[type="submit"]').addEventListener('click', function (event) {
+                // the 'submit' is fired after the form is validated by the browser (if it supports validation)
+                form.addEventListener('submit', function (event) {
                     event.preventDefault();
 
-                    const formData = new FormData(form);
-                    // TODO: add email validation lib
-                    const data = {email : "ASDASD"};
                     axios({
                         url: '/subscribe',
                         method: 'POST',
-                        data: data,
+                        data: new FormData(form),
+                        transformRequest: [function (data, headers) {
+                            if (data instanceof FormData) {
+                                headers['Content-Type'] = 'application/x-www-form-urlencoded';
+                                let params = [];
+                                for (let param of data) {
+                                    params.push(encodeURIComponent(param[0]) + "=" + encodeURIComponent(param[1]));
+                                }
+                                return params.join("&");
+                            } else {
+                                return data;
+                            }
+                        }]
                     })
                         .then(function (response) {
                             if (response.data && response.data.success) {

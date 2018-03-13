@@ -3,6 +3,8 @@ const path = require('path');
 const fs = require('fs');
 
 const _ = require('lodash');
+const emailValidator = require("email-validator");
+
 const express = require('express');
 const bodyParser = require('body-parser');
 
@@ -26,13 +28,14 @@ app.use(bodyParser.json())
 
 app.post('/subscribe', (req, res) => {
     let email = req.body.email;
+
     email = validateEmail(email);
     if (email) {
         subscriptionsStream.write(new Date().toLocaleString() + '\t-\t');
         subscriptionsStream.write(email + '\n');
     }
 
-    res.json({ success: true });
+    res.json({ success: !!email });
 });
 
 app.listen(process.env.PORT || 3000, () => console.log('Listening on port 3000!'));
@@ -43,16 +46,9 @@ app.on('error', () => {
 
 
 const validateEmail = (email) => {
-    let validEmail = false;
-
     if (_.isString(email)) {
         email = email.trim();
-
-        // TODO: add email validation lib
-        if (email) {
-            validEmail = email;
-        }
     }
 
-    return validEmail;
+    return emailValidator.validate(email) ? email : false;
 }

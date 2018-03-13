@@ -1,219 +1,238 @@
 /* ==== Google font ==== */
 
 @import url('http://fonts.googleapis.com/css?family=Lato:300,400');
-
 * {
-  box-sizing: border;
+    box-sizing: border;
 }
 
 body {
-  background: #6ac0bd;
-  font-family: 'Lato', sans-serif;
-  font-weight: 300;
-  font-size: 16px;
-  color: #fff;
-  -webkit-font-smoothing: antialiased;
-  -webkit-overflow-scrolling: touch;
+    background: #6ac0bd;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    color: #fff;
+    -webkit-font-smoothing: antialiased;
+    -webkit-overflow-scrolling: touch;
 }
 
-body,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-weight: 300;
+body, h1, h2, h3, h4, h5, h6 {
+    font-weight: 300;
 }
 
 a {
-  color: #acbac1;
-  word-wrap: break-word;
-  -webkit-transition: all 0.2s ease-in;
-  -moz-transition: all 0.2s ease-in;
-  -ms-transition: all 0.2s ease-in;
-  -o-transition: all 0.2s ease-in;
-  transition: all 0.2s ease-in;
+    color: #acbac1;
+    word-wrap: break-word;
+    -webkit-transition: all 0.2s ease-in;
+    -moz-transition: all 0.2s ease-in;
+    -ms-transition: all 0.2s ease-in;
+    -o-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
 }
 
-a:hover,
-a:focus {
-  color: #4f92af;
-  text-decoration: none;
+a:hover, a:focus {
+    color: #4f92af;
+    text-decoration: none;
 }
 
 .social-circle a {
-  display: inline-block;
-  position: relative;
-  margin: 0 auto 0 auto;
-  -moz-border-radius: 50%;
-  -webkit-border-radius: 50%;
-  border-radius: 50%;
-  text-align: center;
-  line-height: 50px;
-  width: 50px;
-  height: 50px;
-  font-size: 20px;
+    display: inline-block;
+    position: relative;
+    margin: 0 auto 0 auto;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 50px;
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
 }
 
 .social-circle i {
-  color: #fff;
-  -webkit-transition: all 0.8s;
-  -moz-transition: all 0.8s;
-  -o-transition: all 0.8s;
-  -ms-transition: all 0.8s;
-  transition: all 0.8s;
+    color: #fff;
+    -webkit-transition: all 0.8s;
+    -moz-transition: all 0.8s;
+    -o-transition: all 0.8s;
+    -ms-transition: all 0.8s;
+    transition: all 0.8s;
 }
 
 .social-circle a:hover i {
-  -moz-transform: rotate(360deg);
-  -webkit-transform: rotate(360deg);
-  -ms--transform: rotate(360deg);
-  transform: rotate(360deg);
-  -webkit-transition: all 0.2s;
-  -moz-transition: all 0.2s;
-  -o-transition: all 0.2s;
-  -ms-transition: all 0.2s;
-  transition: all 0.2s;
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -ms--transform: rotate(360deg);
+    transform: rotate(360deg);
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    -ms-transition: all 0.2s;
+    transition: all 0.2s;
 }
 
 .social-network a.icoFacebook:hover {
-  background-color: #3b5998;
+    background-color: #3b5998;
 }
 
 .social-network a.icoTwitter:hover {
-  background-color: #33ccff;
+    background-color: #33ccff;
 }
 
 .social-network a.icoGit:hover {
-  background-color: #829aa8;
+    background-color: #829aa8;
 }
 
 .social-network a.icoLinkedin:hover {
-  background-color: #007bb7;
+    background-color: #007bb7;
 }
 
 .btn {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  -o-user-select: none;
-  user-select: none;
-  border: none;
-  border-radius: 0;
-  color: #fff;
-  background-color: #4f92af;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    border: none;
+    border-radius: 0;
+    color: #fff;
+    background-color: #4f92af;
 }
 
 .btn:focus {
-  background-color: #4f92af;
+    background-color: #4f92af;
 }
 
 .btn:hover {
-  color: #fff;
-  background-color: #444;
-  border-color: #444;
+    color: #fff;
+    background-color: #444;
+    border-color: #444;
 }
 
-input.form-control,
-.btn {
-  border: none;
-  border-radius: 0;
-  font-size: 14px;
-  height: 42px;
+input.form-control, .btn {
+    border: none;
+    border-radius: 0;
+    font-size: 14px;
+    height: 42px;
 }
 
-.btn:focus,
-input:focus,
-a:focus {
-  outline: none !important;
-  box-shadow: unset !important;
+.btn:focus, input:focus, a:focus {
+    outline: none !important;
+    box-shadow: unset !important;
 }
-
-
 
 /* wrapper */
 
 #wrapper {
-  background: url('../img/background.jpg') no-repeat center center;
-  background-size: cover;
+    background: url('../img/background.jpg') no-repeat center center;
+    background-size: cover;
 }
 
 .cloud {
-  position: fixed;
+    position: fixed;
 }
 
 .cloud.pos1 {
-  bottom: 40px;
-  left: 20px;
+    bottom: 40px;
+    left: 20px;
 }
 
 .cloud.flipped img {
-  -moz-transform: scaleX(-1);
-  -o-transform: scaleX(-1);
-  -webkit-transform: scaleX(-1);
-  transform: scaleX(-1);
-  filter: FlipH;
-  -ms-filter: "FlipH";
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH;
+    -ms-filter: "FlipH";
 }
 
 .cloud.pos2 {
-  right: 20px;
-  bottom: 70px;
+    right: 20px;
+    bottom: 70px;
 }
 
 .cloud.pos2 img {
-  width: 100px;
+    width: 100px;
 }
 
 .cloud.pos3 {
-  bottom: 150px;
-  right: 50px;
+    bottom: 150px;
+    right: 50px;
 }
 
 .cloud.pos3 img {
-  width: 150px;
+    width: 150px;
 }
 
 .cloud.pos4 {
-  bottom: 200px;
-  left: 120px;
+    bottom: 200px;
+    left: 120px;
 }
 
 .cloud.pos4 img {
-  width: 180px;
+    width: 180px;
 }
 
 .result {
-  position: fixed;
-  top: 0px;
-  right: 0px;
-  padding: 7px 10px 7px 20px;
-  color: #fff;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    padding: 7px 10px 7px 20px;
+    color: #fff;
 }
 
 .result.success {
-  background: #2ecc71;
+    background: #2ecc71;
 }
 
 .result.error {
-  background: #2c3e50;
+    background: #2c3e50;
 }
 
 .result span {
-  margin-left: 10px;
+    margin-left: 10px;
 }
 
 .result.error span {
-  margin-right: 5px;
+    margin-right: 5px;
 }
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
-  .cloud {
-    display: none;
-  }
+    .cloud {
+        display: none;
+    }
+    input[type=email] {
+        width: 100% !important;
+    }
+}
 
-  input[type=email] {
-    width: 100% !important;
-  }
+/* Animations */
+
+.floating {
+    animation-name: floating;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+.floating-4s {
+    animation-duration: 4s;
+}
+
+.floating-5s {
+    animation-duration: 5s;
+}
+
+.floating-6s {
+    animation-duration: 6s;
+}
+
+@keyframes floating {
+    from {
+        transform: translate(0, 0px);
+    }
+    65% {
+        transform: translate(0, 15px);
+    }
+    to {
+        transform: translate(0, -0px);
+    }
 }
