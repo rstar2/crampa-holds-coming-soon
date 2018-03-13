@@ -12,6 +12,7 @@ const subscriptionsFile = path.join(__dirname, 'subscriptions.txt');
 
 // this will create (if not existing) and open the file for appending
 const subscriptionsStream = fs.createWriteStream(subscriptionsFile, { flags: 'a' });
+subscriptionsStream.write('\n\n\n### Started on ' + new Date().toLocaleString() + '\n\n\n');
 
 const app = express();
 
