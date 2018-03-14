@@ -112,6 +112,7 @@ input.form-control, .btn {
     border-radius: 0;
     font-size: 14px;
     height: 42px;
+    vertical-align: middle;
 }
 
 .btn:focus, input:focus, a:focus {
@@ -174,7 +175,7 @@ input.form-control, .btn {
 .result {
     position: fixed;
     top: 0px;
-    right: 0px;
+    left: 0px;
     padding: 7px 10px 7px 20px;
     color: #fff;
 }
@@ -195,12 +196,9 @@ input.form-control, .btn {
     margin-right: 5px;
 }
 
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+@media only screen and (max-device-width: 480px) {
     .cloud {
         display: none;
-    }
-    input[type=email] {
-        width: 100% !important;
     }
 }
 

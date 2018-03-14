@@ -3,7 +3,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name='viewport' content='initial-scale=1, maximum-scale=1, width=device-width'>
     <meta name="title" content="Crampa Holds">
     <meta name="ROBOTS" content="Crampa Holds, Climbing Holds, Training Holds, Wooden Holds">
     <meta name="description" content="Crampa Holds">
@@ -33,8 +34,7 @@
         <div class="container">
             <div class="row justify-content-center my-3">
                 <div class="col text-center">
-                    <!-- TODO: add real logo -->
-                    <!-- <img src="/img/logo.png"> -->
+                    <img src="/img/logo.png" alt="">
                 </div>
             </div>
             <div class="row justify-content-center my-5">
@@ -42,16 +42,10 @@
                     <h3>We're working hard to launch the online shop and we'll be ready very soon</h3>
                 </div>
             </div>
-            <div class="row justify-content-center my-4">
-                <div class="col-auto text-center">
-                    <form id="subscribe" class="form-inline validate" action="/subscribe" method="POST" role="form">
-                        <div class="form-group">
-                            <input class="form-control" type="email" name="email" placeholder="Enter your email address" required>
-                            <input class="form-control btn" type="submit" value="Get notified!">
-                        </div>
-                    </form>
-                </div>
-            </div>
+            <form class="row form-inline justify-content-center my-4" role="form" id="subscribe" action="/subscribe" method="POST">
+                <input class="col-8 col-sm-auto form-control" type="email" name="email" placeholder="Enter your email address" required>
+                <input class="col-8 col-sm-auto form-control btn" type="submit" value="Get notified!">
+            </form>
             <div class="row justify-content-center my-3">
                 <div class="col text-center">
                     <div class="social-network social-circle">
