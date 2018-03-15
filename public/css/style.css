@@ -142,9 +142,7 @@ input.form-control[type=email] {
     margin-right: 5px;
 }
 
-/* wrapper */
-
-#wrapper {
+body {
     background: url('../img/background.jpg') no-repeat center center;
     background-size: cover;
 }
