@@ -1,4 +1,3 @@
-const process = require('process');
 const path = require('path');
 const fs = require('fs');
 
@@ -22,7 +21,7 @@ app.use(express.static('public'));
 
 
 // parse application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.urlencoded({ extended: false }));
 
 // parse application/json
 app.use(bodyParser.json())
@@ -39,11 +38,12 @@ app.post('/subscribe', (req, res) => {
     res.json({ success: !!email });
 });
 
-app.listen(process.env.PORT || 3000, () => console.log('Listening on port 3000!'));
+const port = process.env.PORT || 3001;
+app.listen(port, () => console.log(`Listening on port ${port}!`));
 app.on('error', () => {
     subscriptionsStream.close();
     process.exit(1);
-})
+});
 
 
 const validateEmail = (email) => {
@@ -52,4 +52,4 @@ const validateEmail = (email) => {
     }
 
     return emailValidator.validate(email) ? email : false;
-}
+};
