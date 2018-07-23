@@ -38,7 +38,7 @@ app.post('/subscribe', (req, res) => {
     res.json({ success: !!email });
 });
 
-const port = process.env.PORT || 3001;
+const port = process.env.PORT || 80;
 app.listen(port, () => console.log(`Listening on port ${port}!`));
 app.on('error', () => {
     subscriptionsStream.close();
